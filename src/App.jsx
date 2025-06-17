@@ -30,7 +30,7 @@ const showToast = (message, type = 'success') => {
   setToast({ message, type });
 };
 
-  const API_BASE = 'https://sheetdb.io/api/v1/sjw1j6k6w8wks';
+  const API_BASE = 'https://sheetdb.io/api/v1/iq99l3270t85v';
 
   const processData = async () => {
     const rows = inputData.trim().split('\n');
@@ -92,7 +92,7 @@ const showToast = (message, type = 'success') => {
     for (let item of valid) {
       try {
         // SEARCH: cek apakah data sudah ada dan statusnya
-        const res = await axios.get(`https://sheetdb.io/api/v1/sjw1j6k6w8wks/search?sheet=LMBR%20KRJ%20GM%20JATIM2&WITEL=SIDOARJO&WO%20HARI%20INI=WOHARIINI&`, {
+        const res = await axios.get(`https://sheetdb.io/api/v1/iq99l3270t85v/search?sheet=LMBR%20KRJ%20GM%20JATIM2&WITEL=SIDOARJO&WO%20HARI%20INI=WOHARIINI&`, {
           params: {
             'ONU SN': item.onuSN
           }
@@ -114,7 +114,7 @@ const showToast = (message, type = 'success') => {
         }
 
         // PATCH: update status valins dan ID valins
-        await axios.patch(`https://sheetdb.io/api/v1/sjw1j6k6w8wks/ONU%20SN/${item.onuSN}?sheet=LMBR%20KRJ%20GM%20JATIM2`, {
+        await axios.patch(`https://sheetdb.io/api/v1/iq99l3270t85v/ONU%20SN/${item.onuSN}?sheet=LMBR%20KRJ%20GM%20JATIM2`, {
           data: {
             'STATUS VALINS': 'SUDAH VALINS',
             'VALINS TYPE' : 'Sudah Valins',
